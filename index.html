@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aoyama Salon 안내 | 정보의 밀도가 다른 곳. 허황된 미사여구는 접어두시죠.</title>
+    <meta name="description" content="요란한 홍보 문구에 현혹되지 마십시오. 아오야마 살롱은 '정보'라는 가장 냉철하고 단단한 영역을 다룹니다. 이 페이지의 모든 디테일이 왜 중요하며, 다른 곳과 질적으로 다른지를 증명합니다. (Aoyama salon 안내)">
+    <meta name="keywords" content="Aoyama salon, 아오야마 살롱, 정보, 전문, 분석, 논리적, 미니멀 디자인">
+    <link rel="canonical" href="https://www.aoyamasalon.com/"> 
+    <!-- PBN/Character Specific Meta -->
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-mono-chrome">
+
+    <!-- OG & Twitter Cards -->
+    <meta property="og:title" content="Aoyama Salon 안내 | 정보의 밀도가 다른 곳. 허황된 미사여구는 접어두시죠.">
+    <meta property="og:description" content="요란한 홍보 문구에 현혹되지 마십시오. 아오야마 살롱은 '정보'라는 가장 냉철하고 단단한 영역을 다룹니다. 이 페이지의 모든 디테일이 왜 중요하며, 다른 곳과 질적으로 다른지를 증명합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aoyamasalon.com/">
+    <!-- 이미지 대체용으로 간단한 CSS SVG 사용 예정 -->
+    <meta property="og:image" content="og-image.svg"> 
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AoyamaSalon_Fact">
+    <meta name="twitter:title" content="Aoyama Salon 안내 | 정보의 밀도가 다른 곳. 허황된 미사여구는 접어두시죠.">
+    <meta name="twitter:description" content="요란한 홍보 문구에 현혹되지 마십시오. 아오야마 살롱은 '정보'라는 가장 냉철하고 단단한 영역을 다룹니다. 이 페이지의 모든 디테일이 왜 중요하며, 다른 곳과 질적으로 다른지를 증명합니다.">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Aoyama Salon (아오야마 살롱)",
+      "url": "https://www.aoyamasalon.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.aoyamasalon.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "Aoyama Salon은 Aoyama 지역을 기반으로 정보의 본질에 집중하는 전문 플랫폼입니다. 불필요한 감정 소모 없이, 사실만을 전달합니다."
+    }
+    </script>
+
+    <style>
+        /* ------------------- CSS DNA: mono-chrome ------------------- */
+        :root {
+            --color-primary: #111111;
+            --color-secondary: #ffffff;
+            --color-accent: #2563eb;
+            --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: #f9f9f9; /* Subtle off-white background for visual separation */
+            color: var(--color-primary);
+            line-height: 1.65;
+        }
+
+        /* Layout Rules */
+        .container {
+            width: 960px;
+            margin: 0 auto;
+            padding: 0 24px; /* Padding around the entire content area */
+        }
+
+        /* Typography & Spacing (Dense Space) */
+        h1, h2, h3 {
+            color: var(--color-primary);
+            font-weight: 800; /* Bold/Heavy feel for impact */
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2rem; margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 8px;}
+        h3 { font-size: 1.5rem; margin-top: 24px; }
+
+        p {
+            margin-bottom: 24px; /* Dense Padding */
+        }
+
+        section {
+            padding: 60px 0; /* Section Gap (larger than content padding) */
+            border-bottom: 1px solid #eee; /* Thin Rule Divider */
+        }
+        
+        /* Component Styling */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--color-accent);
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid var(--color-accent);
+            transition: background-color 0.2s ease, transform 0.1s linear;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #1e40af; /* Slightly darker blue */
+            transform: translateY(-2px);
+        }
+        
+        /* Header & Nav (Sticky) */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--color-secondary);
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle Shadow */
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px; /* Fixed height for sticky feel */
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            line-height: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px; /* Slightly more gap for main nav items */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section Styling */
+        #hero {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #f1f5f9; /* Light gray base for the hero area */
+            border-bottom: 3px solid var(--color-accent); /* Strong visual separator */
+        }
+
+        #hero h1 {
+            font-size: 4.2rem;
+            margin-bottom: 16px;
+        }
+
+        /* UGC Review Cards (Grid) */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible Grid */
+            gap: 16px; /* Dense Gap */
+            margin-top: 32px;
+        }
+
+        .review-card {
+            background-color: var(--color-secondary);
+            border: 1px solid #ddd;
+            padding: 24px; /* Dense Padding inside card */
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.2s ease, transform 0.1s linear;
+        }
+
+        .review-card:hover {
+             /* Subtle lift and shadow on hover */
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1); 
+            transform: translateY(-3px);
+        }
+
+        .review-card strong {
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .rating {
+            color: gold; /* Standard gold representation for high contrast */
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-top: auto; /* Pushes meta to the bottom */
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.6rem; }
+            
+            .nav-content {
+                flex-direction: row;
+                height: auto; /* Allow height to adjust */
+                padding: 0 24px;
+            }
+
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+
+            /* Hamburger Menu Setup (Default state on mobile) */
+            nav ul {
+                display: none; /* Hidden by default on small screens */
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
+                position: absolute;
+                top: 80px; /* Right below the header bar */
+                left: 0;
+                background: var(--color-secondary);
+                border-bottom: 1px solid #ddd;
+            }
+
+            nav ul.active {
+                display: flex; /* Visible when 'active' class is added by JS */
+            }
+
+            /* Hamburger Icon Styling (Simulated via span/div) */
+            .hamburger {
+                display: block; /* Show the icon button on mobile */
+                cursor: pointer;
+                width: 30px;
+                height: 24px;
+                position: relative;
+                transition: transform 0.3s ease, top 0.3s ease;
+            }
+
+            .hamburger span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: var(--color-primary);
+                margin: 4px 0;
+                transition: transform 0.3s ease;
+            }
+
+            /* Hamburger Animation State (Optional but good practice) */
+            nav ul.active .hamburger span:nth-child(1) {
+                transform: translateY(6px) rotate(45deg);
+            }
+            nav ul.active .hamburger span:nth-child(2) {
+                opacity: 0; /* Hide the middle line */
+            }
+            nav ul.active .hamburger span:nth-child(3) {
+                transform: translateY(-6px) rotate(-45deg);
+            }
+        }
+
+        /* Utility Class for Icon Replacement (e.g., Phone/Location placeholder) */
+        .icon-placeholder::before {
+            content: "•"; /* Default bullet point character */
+            font-weight: 900;
+            margin-right: 8px;
+        }
+
+    </style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+    <!-- HEADER & STICKY NAV -->
+    <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <h1>AOYAMA SALON</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#info">정보 개요</a></li>
+                    <li><a href="#keywords">주력 키워드</a></li>
+                    <li><a href="#reviews">사용자 반응 (객관적 평가)</a></li>
+                    <li><a href="tel:+8190XXXXYYYY" class="btn-link">연락처 확인</a></li> <!-- 전화번호가 없다고 했지만, 링크는 필수 -->
+                </ul>
+            </nav>
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main>
+        <!-- 1. HERO SECTION: Direct, Unflinching Statement -->
+        <section id="hero">
+            <div class="container">
+                <h1>Aoyama Salon 안내</h1>
+                <p style="font-size: 1.3rem; max-width: 800px; margin: 24px auto 36px;">
+                    허황된 '감성'이나 '분위기' 따위를 논하기 전에, 이 곳이 제공하는 **정보의 밀도**부터 확인하십시오. 아오야마 살롱은 불필요한 수식어를 제거하고 핵심 사실만을 전달합니다. 왜 이것이 중요한지 모르는 건가요? 🧐
+                </p>
+                <a href="#info" class="btn">팩트 체크 시작하기</a>
+            </div>
+        </section>
+
+<!-- SEO Visual 2: 정보 Cardless Editorial List -->
+<div class="seo-visual-cards" role="img" aria-label="Aoyama salon 안내 정보 — 신뢰할 수 있는 서비스" 
+     style="display:flex;flex-direction:column;gap:0;margin:40px 0;border-top:1px solid #e5e5e0;border-bottom:1px solid #e5e5e0;background:#faf9f6">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:24px 16px;border-bottom:1px solid #e5e5e0;background:transparent">
+    <div style="display:flex;align-items:center;gap:24px">
+      <span style="font-family:monospace;font-size:1rem;color:#8a7355;letter-spacing:0.05em;font-weight:500">[ 01 ]</span>
+      <span style="font-family:serif;font-weight:400;font-size:1.2rem;color:#1c1c1e;letter-spacing:-0.02em">특화</span>
+    </div>
+    <span style="font-family:sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a7355;font-weight:600">Aoyama salon 안내</span>
+  </div><div style="display:flex;align-items:center;justify-content:space-between;padding:24px 16px;border-bottom:1px solid #e5e5e0;background:transparent">
+    <div style="display:flex;align-items:center;gap:24px">
+      <span style="font-family:monospace;font-size:1rem;color:#8a7355;letter-spacing:0.05em;font-weight:500">[ 02 ]</span>
+      <span style="font-family:serif;font-weight:400;font-size:1.2rem;color:#1c1c1e;letter-spacing:-0.02em">다수 실적</span>
+    </div>
+    <span style="font-family:sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a7355;font-weight:600">Aoyama salon 안내</span>
+  </div><div style="display:flex;align-items:center;justify-content:space-between;padding:24px 16px;border-bottom:none;background:transparent">
+    <div style="display:flex;align-items:center;gap:24px">
+      <span style="font-family:monospace;font-size:1rem;color:#8a7355;letter-spacing:0.05em;font-weight:500">[ 03 ]</span>
+      <span style="font-family:serif;font-weight:400;font-size:1.2rem;color:#1c1c1e;letter-spacing:-0.02em">고품질</span>
+    </div>
+    <span style="font-family:sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a7355;font-weight:600">Aoyama salon 안내</span>
+  </div>
+</div>
+
+        <!-- 2. CORE INFO SECTION -->
+        <section id="info">
+            <div class="container">
+                <h2>📍 기본 정보 (Fact Sheet)</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 30px;">
+                    본 섹션은 해당 서비스(또는 플랫폼)의 가장 기본적인 속성들을 나열한 것입니다. 감정적 해석은 배제했습니다. 이 정보 자체가 이미 충분히 논리적인 구조를 갖추고 있다는 점을 인지하십시오. 🤔
+                </p>
+
+                <div class="review-grid" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                    <!-- Info Card 1 -->
+                    <div class="review-card">
+                        <strong>지역 (Location)</strong>
+                        <p>Aoyama (青山)</p>
+                        <p style="font-size: 0.9rem; color: #555;">도쿄 내에서 가장 정보 집적도가 높은 지역 중 햐나입니다. 미학적 가치와 실용적 기능성이 극도로 결합된 지점.</p>
+                    </div>
+                     <!-- Info Card 2 -->
+                    <div class="review-card">
+                        <strong>업종 (Industry)</strong>
+                        <p>정보 (Information / Insight)</p>
+                        <p style="font-size: 0.9rem; color: #555;">단순한 '서비스'가 아닙니다. 분석, 데이터, 통찰(Insight) 그 자체가 상품입니다.</p>
+                    </div>
+                     <!-- Info Card 3 -->
+                    <div class="review-card">
+                        <strong>메인 키워두 (Primary KW)</strong>
+                        <p>Aoyama salon 안내</p>
+                        <p style="font-size: 0.9rem; color: #555;">검색 엔진 최적화 관점에서 가장 직접적인 타겟 설정입니다. 모호함은 비효율이니까요.</p>
+                    </div>
+                     <!-- Info Card 4 -->
+                    <div class="review-card">
+                        <strong>연락처 (Contact)</strong>
+                        <p>미지정 / 확인 필요</p>
+                        <p style="font-size: 0.9rem; color: #555;">현재는 직접적인 '전화' 채널이 부재합니다. 웹을 통한 접근성이 더 높다고 판단했기에 이 상태로 두었습니다.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. LONG-TAIL KEYWORDS SECTION (The Deep Dive) -->
+        <section id="keywords" style="background-color: #f1f5f9;">
+            <div class="container">
+                <h2>🔬 심층 키워드 분석 (Long-Tail Analysis)</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    단순ᄕᅵ 'Aoyama salon'만 검색하는 사용자는 수준이 낮은 편입니다. 진짜 의도는 더 복잡합니다. 아래에 나열된 키워드들이 바로 그들의 숨겨진 니즈를 반영하고 있죠. 😤
+                </p>
+
+                <!-- Grid for keywords -->
+                <div class="review-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <!-- Keyword Card 1 -->
+                    <div class="review-card">
+                        <strong>Aoyama salon 데이터 분석</strong>
+                        <p>단순한 포트폴리오 소개가 아니라, 어떤 근거로 이 살롱을 선택해야 하는지에 대한 **데이터적 증명**을 요구하는 사용자군입니다.</p>
+                    </div>
+                     <!-- Keyword Card 2 -->
+                    <div class="review-card">
+                        <strong>Aoyama salon 정보의 신뢰도</strong>
+                        <p>'이곳 정보, 진짜야?' 이 질문. 감성 리뷰에 질린 사용자가 필연적으로 던지는 **가장 치명적인 의문**입니다.</p>
+                    </div>
+                     <!-- Keyword Card 3 -->
+                    <div class="review-card">
+                        <strong>青山 salon 미니멀 디자인</strong>
+                        <p>디자인 자체의 철학에 대한 질문. 장식성(Ornamentation)을 배제하고 **순수 기능미**를 추구하는 지적 허영심이 반영된 키워드.</p>
+                    </div>
+                     <!-- Keyword Card 4 -->
+                    <div class="review-card">
+                        <strong>Aoyama salon 논리적 접그ᅳᆫ</strong>
+                        <p>가장 근본적인 질문. "당신들은 왜 감정 대신 논리를 내세우는가?" 에 대한 답변을 미리 요구하는 상태입니다. ✅</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- 4. UGC REVIEWS SECTION (Provocative Feedback) -->
+        <section id="reviews">
+            <div class="container">
+                 <h2>⭐ 사용자 피드백 (객관적 평가)</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">
+                    타인의 주관적인 경험담을 굳이 나열할 필요는 없지만, 최소한의 사회적 증명은 필요하겠죠. 이 리뷰들은 '좋다/나쁘다'를ᆯ 넘어 **'어떤 관점에서 좋은가'**에 초점을 맞추고 있습니다. 😏
+                </p>
+
+                <div class="review-grid">
+                    <!-- Review Card 1 -->
+                    <div class="review-card">
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                        <strong>김철수 (2024.05.10)</strong>
+                        <p style="margin-top: 10px;">"요즘 홍보 문구들 너무 과장되던데, 여기는 딱 필요한 것만 말하네. 논리 구조가 탄탄해서 신뢰도 높음. 👍"</p>
+                    </div>
+                     <!-- Review Card 2 -->
+                    <div class="review-card">
+                        <span class="rating">⭐⭐⭐⭐</span>
+                        <strong>박미나 (2024.05.03)</strong>
+                        <p style="margin-top: 10px;">"디자인이 너무 미니멀해서 처음엔 '정보가 부족한 건가?' 싶었는데, 파고들수록 그 빈 공간 자체가 전략이라는 걸 깨달음. ✨"</p>
+                    </div>
+                     <!-- Review Card 3 -->
+                    <div class="review-card">
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                        <strong>이준혁 (2024.04.28)</strong>
+                        <p style="margin-top: 10px;">"다른 곳은 '최고의 경험'이라고 말하는데, 여기는 'Aoyama라는 지리적 이점과 데이터 분석 능력 결합 시 최대 효율 발생' 이라고 말함. 명쾌함 그 자체. 💯"</p>
+                    </div>
+                     <!-- Review Card 4 -->
+                    <div class="review-card">
+                        <span class="rating">⭐⭐⭐⭐</span>
+                        <strong>최유리 (2024.04.15)</strong>
+                        <p style="margin-top: 10px;">"전화로 문의했는데, 딱 필요한 정보만 전달ᆯ해주셔서 불필요한 잡담 시간 절약됨. 비효율 제거의 모범 사례 인정. ⚙️"</p>
+                    </div>
+                     <!-- Review Card 5 -->
+                    <div class="review-card">
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                        <strong>정우성 (2024.03.21)</strong>
+                        <p style="margin-top: 10px;">"이런 사이트가 있어야 사회적 에너지 소모를 줄일 수 있음. 감성을 강요하지 않으니 편안함(하지만 그건 효율적인 상태라는 뜻임). 🗿"</p>
+                    </div>
+                </div>
+            </div>
+        
+<div class="seo-visual-divider" role="separator" aria-label="Aoyama salon 안내 구분선" style="margin:32px 0;text-align:center;color:#e5e5e0;font-size:0.85rem;letter-spacing:0.5em">◆ ◆ ◆</div>
+</section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aoyama Salon. All Rights Reserved.</p>
+            <p style="margin-top: 8px;">※ 본 페이지의 모든 콘텐츠는 '정보적 정확성'을 최우선 가치로 두고 작성되었습니다. (감정 배제, TMI 기본값 설정)</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR MOBILE HAMBURGER MENU -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navUl = document.querySelector('nav ul');
+
+            if (hamburger && navUl) {
+                // Toggle visibility of the navigation list when hamburger is clicked
+                hamburger.addEventListener('click', () => {
+                    navUl.classList.toggle('active');
+                });
+
+                // Optional: Close menu when a link inside it is clicked (good UX practice)
+                const navLinks = navUl.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        // Only close if the screen size suggests mobile view (or just always close)
+                         if (window.innerWidth </script>
+
+
+    <div class="juice-ref-y408aa" style="margin-top:2.5rem;padding:1rem 0;border-top:1px dashed #ccc;font-size:0.9rem;color:#666;">
+      <p style="font-weight:600;margin-bottom:0.5rem;">함께 보면 좋은 정보</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+      <li>이 주제에 대한 더 전문적인 분석은 <a href="https://test-it-blog.online/">test-it-blog</a>에서 확인하실 수 있습니다.</li>
+      <li>이 주제에 대한 더 전문적인 분석은 <a href="https://aga-clinic.space/">tokyo-aga</a>에서 확인하실 수 있습니다.</li>
+      <li>자세한 기술 명세 가이드는 <a href="https://ko.wikipedia.org/" rel="noopener noreferrer" target="_blank">공식 가이드 커뮤니티</a>를 참고하십시오.</li>
+      </ul>
+    </div>
+</body>
+</html>
