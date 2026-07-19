@@ -7,10 +7,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-User-agent: Yeti
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-Sitemap: https://aoyama-salon.pages.dev/sitemap.xml
+Sitemap: https://aoyama-salon-guide.pbn-builder.xyz/sitemap.xml
