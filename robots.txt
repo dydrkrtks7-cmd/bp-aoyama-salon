@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://magok-massage-note.clipdesk.shop/sitemap.xml
-Sitemap: https://magok-massage-note.clipdesk.shop/sitemap-pages.xml
+Sitemap: https://aoyama-salon-guide.pbn-builder.xyz/sitemap.xml
+Sitemap: https://aoyama-salon-guide.pbn-builder.xyz/sitemap-pages.xml
