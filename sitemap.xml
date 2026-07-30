@@ -166,6 +166,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://aoyama-salon-guide.pbn-builder.xyz/posts/gemini-coverage-20260731-0001.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://aoyama-salon-guide.pbn-builder.xyz/posts/qa-001-1hont82.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
