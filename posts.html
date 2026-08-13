@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · aoyama-salon</title>
+  <meta name="description" content="aoyama-salon에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://aoyama-salon-guide.pbn-builder.xyz/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* ------------------- CSS DNA: mono-chrome ------------------- */
+ :root {
+ --color-primary: #111111;
+ --color-secondary: #ffffff;
+ --color-accent: #2563eb;
+ --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: var(--font-family);
+ background-color: #f9f9f9; /* Subtle off-white background for visual separation */
+ color: var(--color-primary);
+ line-height: 1.65;
+ }
+
+ /* Layout Rules */
+ .container {
+ width: 960px;
+ margin: 0 auto;
+ padding: 0 24px; /* Padding around the entire content area */
+ }
+
+ /* Typography & Spacing (Dense Space) */
+ h1, h2, h3 {
+ color: var(--color-primary);
+ font-weight: 800; /* Bold/Heavy feel for impact */
+ margin-bottom: 16px;
+ line-height: 1.2;
+ }
+
+ h1 { font-size: 3rem; }
+ h2 { font-size: 2rem; margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 8px;}
+ h3 { font-size: 1.5rem; margin-top: 24px; }
+
+ p {
+ margin-bottom: 24px; /* Dense Padding */
+ }
+
+ section {
+ padding: 60px 0; /* Section Gap (larger than content padding) */
+ border-bottom: 1px solid #eee; /* Thin Rule Divider */
+ }
+ 
+ /* Component Styling */
+ .btn {
+ display: inline-block;
+ padding: 12px 30px;
+ background-color: var(--color-accent);
+ color: var(--color-secondary);
+ text-decoration: none;
+ font-weight: 700;
+ border: 1px solid var(--color-accent);
+ transition: background-color 0.2s ease, transform 0.1s linear;
+ cursor: pointer;
+ }
+
+ .btn:hover {
+ background-color: #1e40af; /* Slightly darker blue */
+ transform: translateY(-2px);
+ }
+ 
+ /* Header & Nav (Sticky) */
+ header {
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ background-color: var(--color-secondary);
+ border-bottom: 1px solid #ddd;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle Shadow */
+ }
+
+ .nav-content {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 80px; /* Fixed height for sticky feel */
+ }
+
+ .logo h1 {
+ font-size: 1.5rem;
+ margin: 0;
+ line-height: 1;
+ }
+
+ nav ul {
+ list-style: none;
+ display: flex;
+ gap: 32px; /* Slightly more gap for main nav items */
+ }
+
+ nav a {
+ text-decoration: none;
+ color: var(--color-primary);
+ font-weight: 600;
+ transition: color 0.2s ease;
+ }
+
+ nav a:hover {
+ color: var(--color-accent);
+ }
+
+ /* Hero Section Styling */
+ #hero {
+ text-align: center;
+ padding: 100px 0;
+ background-color: #f1f5f9; /* Light gray base for the hero area */
+ border-bottom: 3px solid var(--color-accent); /* Strong visual separator */
+ }
+
+ #hero h1 {
+ font-size: 4.2rem;
+ margin-bottom: 16px;
+ }
+
+ /* UGC Review Cards (Grid) */
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible Grid */
+ gap: 16px; /* Dense Gap */
+ margin-top: 32px;
+ }
+
+ .review-card {
+ background-color: var(--color-secondary);
+ border: 1px solid #ddd;
+ padding: 24px; /* Dense Padding inside card */
+ display: flex;
+ flex-direction: column;
+ transition: box-shadow 0.2s ease, transform 0.1s linear;
+ }
+
+ .review-card:hover {
+ /* Subtle lift and shadow on hover */
+ box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1); 
+ transform: translateY(-3px);
+ }
+
+ .review-card strong {
+ font-size: 1.1rem;
+ display: block;
+ margin-bottom: 8px;
+ }
+
+ .rating {
+ color: gold; /* Standard gold representation for high contrast */
+ font-size: 1.4rem;
+ margin-bottom: 12px;
+ }
+
+ .meta-info {
+ font-size: 0.85rem;
+ color: #666;
+ border-top: 1px solid #eee;
+ padding-top: 10px;
+ margin-top: auto; /* Pushes meta to the bottom */
+ }
+
+ /* Footer Styling */
+ footer {
+ text-align: center;
+ padding: 30px 0;
+ border-top: 1px solid #ddd;
+ font-size: 0.9rem;
+ color: #777;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+ h1 { font-size: 2.5rem; }
+ h2 { font-size: 1.6rem; }
+ 
+ .nav-content {
+ flex-direction: row;
+ height: auto; /* Allow height to adjust */
+ padding: 0 24px;
+ }
+
+ .logo h1 {
+ font-size: 1.3rem;
+ }
+
+ /* Hamburger Menu Setup (Default state on mobile) */
+ nav ul {
+ display: none; /* Hidden by default on small screens */
+ flex-direction: column;
+ width: 100%;
+ gap: 12px;
+ position: absolute;
+ top: 80px; /* Right below the header bar */
+ left: 0;
+ background: var(--color-secondary);
+ border-bottom: 1px solid #ddd;
+ }
+
+ nav ul.active {
+ display: flex; /* Visible when 'active' class is added by JS */
+ }
+
+ /* Hamburger Icon Styling (Simulated via span/div) */
+ .hamburger {
+ display: block; /* Show the icon button on mobile */
+ cursor: pointer;
+ width: 30px;
+ height: 24px;
+ position: relative;
+ transition: transform 0.3s ease, top 0.3s ease;
+ }
+
+ .hamburger span {
+ display: block;
+ width: 100%;
+ height: 3px;
+ background-color: var(--color-primary);
+ margin: 4px 0;
+ transition: transform 0.3s ease;
+ }
+
+ /* Hamburger Animation State (Optional but good practice) */
+ nav ul.active .hamburger span:nth-child(1) {
+ transform: translateY(6px) rotate(45deg);
+ }
+ nav ul.active .hamburger span:nth-child(2) {
+ opacity: 0; /* Hide the middle line */
+ }
+ nav ul.active .hamburger span:nth-child(3) {
+ transform: translateY(-6px) rotate(-45deg);
+ }
+ }
+
+ /* Utility Class for Icon Replacement (e.g., Phone/Location placeholder) */
+ .icon-placeholder::before {
+ content: "•"; /* Default bullet point character */
+ font-weight: 900;
+ margin-right: 8px;
+ }
+
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · aoyama-salon">
+  <meta property="og:description" content="aoyama-salon에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://aoyama-salon-guide.pbn-builder.xyz/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 36개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-002-1hont82.html">Aoyama salon 안내 vs Aoyama salon 안내 비교</a>
+        <p class="post-item__summary">아오야마 지역에서 제공되는 각종 살롱 안내 정보를 접할 때 어떤 기준으로 선택해야 할지 고민하는 경우가 많습니다. 특히 다양한 매체에서 쏟아지는 아오야마 살롱 안내 내용들이 서로 다른 관점을 제시하</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0256.html">Aoyama salon 안내 및 마포/합정 인디 소셜 라운지 가이드 프라이빗 파티 체크</a>
+        <p class="post-item__summary">최근 Aoyama salon 안내 정보에 관심을 두는 이들이 늘어나면서 소규모 모임을 위한 장소 섭외가 중요해졌습니다. 프라이빗한 파티를 계획할 때 가장 고려해야 할 사항은 위치의 접근성과 내부 분</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0257.html">Aoyama salon 안내 및 서울 중구 을지로 마사지 동대문 풋쌤 이용 정보</a>
+        <p class="post-item__summary">오랜 쇼핑이나 업무로 인해 다리가 퉁퉁 부어 걷기조차 힘들었던 경험이 한 번쯤 있으실 겁니다. 특히 낯선 지역을 방문했을 때는 어디가 실력 있는 곳인지 알기 어려워 고민이 깊어지곤 합니다. Aoya</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0258.html">Aoyama salon 안내를 통해 배우는 마포 홍대 로컬 럭셔리 밤문화 가이드</a>
+        <p class="post-item__summary">홍대 지역의 밤이 무조건 무질서하거나 위험하다는 편견을 가진 분들이 많습니다. 하지만 이는 로컬의 깊숙한 문화를 경험해보지 못한 사람들의 흔한 오해일 뿐입니다. Aoyama salon 안내 관련 소</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0259.html">Aoyama salon 안내 및 구글 알고리즘 감점 치료 및 백링크 수술실 전략</a>
+        <p class="post-item__summary">웹사이트가 검색 엔진에서 외면받지 않으려면 콘텐츠의 품질은 물론 기술적 요소까지 완벽하게 충족해야 합니다. 검색 결과 순위 하락을 경험하는 것은 운영자에게는 치명적인 위기 상황일 수 있습니다. Ao</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0260.html">Aoyama salon 안내와 함께하는 마포 럭셔리 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">단체 모임을 준비하다 보면 장소 선정부터 음식, 서비스까지 고려할 사항이 너무 많아 머리가 아프기 마련입니다. 특히 마포 지역에서 럭셔리한 분위기의 장소를 찾기란 더욱 쉽지 않습니다. Aoyama </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0261.html">Aoyama salon 안내 및 자세한 내용 활용법</a>
+        <p class="post-item__summary">디지털 환경에서 웹사이트의 권위를 높이는 작업은 정교한 전략을 요구합니다. Aoyama salon 안내 정보와 연계하여 콘텐츠의 급수를 정화하고 사이트의 도메인 지수를 관리하는 과정은 매우 체계적으</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0262.html">Aoyama salon 안내와 마포 셔츠룸 예약 시 눈탱이 피하는 법 가이드</a>
+        <p class="post-item__summary">도심 속 유흥 문화를 즐기다 보면 예상치 못한 비용 지출로 곤란을 겪는 경우가 빈번합니다. Aoyama salon 안내 정보를 참고하는 것처럼 지역별 정보를 확인하고 합리적인 선택을 내리는 것이 무</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0263.html">Aoyama salon 안내를 참고한 실패 없는 셔츠룸 예약 및 셔츠룸 공략법</a>
+        <p class="post-item__summary">밤 문화의 즐거움을 온전히 누리기 위해서는 철저한 준비가 필수적입니다. Aoyama salon 안내 방식에서 배울 수 있듯이, 명확한 가이드를 따르지 않으면 예기치 못한 시행착오를 겪게 됩니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0264.html">Aoyama salon 안내가 알려주는 구글 틈새 키워드 트래픽 외환 거래 전략</a>
+        <p class="post-item__summary">트래픽 차익을 통한 투자는 데이터 분석 능력이 성패를 결정짓습니다. Aoyama salon 안내 사례처럼 정밀한 타겟팅과 접근성 분석은 디지털 자산의 효율을 높이는 데 매우 유효한 전략입니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0265.html">Aoyama salon 안내 및 구글 봇 정밀 검진 및 크롤 버짓 밀착 간호 지침</a>
+        <p class="post-item__summary">웹사이트를 운영하다 보면 특정 페이지가 검색 결과에 반영되지 않아 답답함을 느끼는 경우가 빈번합니다. Aoyama salon 안내 페이지가 색인되지 않는 기술적 문제를 마주했을 때, 초보 운영자들은</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0266.html">Aoyama salon 안내와 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">많은 이들이 단체 모임을 기획할 때 가라오케는 단순히 노래만 부르는 곳이라 생각하여 아무 곳이나 방문하곤 합니다. 하지만 Aoyama salon 안내와 같은 세련된 서비스 가이드가 필요한 것처럼, </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0267.html">Aoyama salon 안내를 활용한 신뢰도 높은 셔츠룸 사이트 이용 방법</a>
+        <p class="post-item__summary">쾌적한 환경에서 서비스를 경험하기 위해서는 우선 해당 업체의 운영 방식이 투명한지 살펴야 합니다. Aoyama salon 안내 서비스를 찾아보는 분들이라면 아마도 서비스 품질과 보안에 민감한 분들일</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0268.html">Aoyama salon 안내와 구글 알고리즘 고신용 도메인 보증 카드 발급 절차</a>
+        <p class="post-item__summary">디지털 환경에서 귀하의 웹사이트가 구글 알고리즘으로부터 얼마나 높은 평가를 받고 있는지 궁금하신 적이 있습니까? Aoyama salon 안내 페이지를 운영하거나 관련 비즈니스를 확장하는 과정에서 신</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0269.html">Aoyama salon 안내 및 구글 인덱싱 속도 초고속 광회선 대역폭 최적화 기술</a>
+        <p class="post-item__summary">웹사이트 운영자들에게 Aoyama salon 안내 정보와 같은 양질의 콘텐츠를 빠르게 검색 엔진에 노출하는 일은 매우 중요하다. 특히 구글 크롤러가 사이트의 변화를 감지하고 데이터를 수집하는 속도는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0270.html">Aoyama salon 안내와 도메인 파워 증폭을 위한 구글 신뢰 지수 모발이식 솔루션</a>
+        <p class="post-item__summary">최근 온라인 서비스의 성장세가 가팔라지면서 Aoyama salon 안내 콘텐츠를 운영하는 방식에도 변화가 생겼다. 도메인 파워를 높이기 위해 구글이 평가하는 신뢰 지수는 검색 노출의 핵심 지표가 되</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0271.html">Aoyama salon 안내 및 합정 셔츠룸 단골들이 뽑은 핫플 매거진 이용법</a>
+        <p class="post-item__summary">많은 이들이 Aoyama salon 안내 관련 정보를 찾으면서도 동시에 국내 로컬 명소에 대한 관심을 놓지 않는다. 특히 합정 지역을 방문하는 사람들은 실패하지 않는 선택을 위해 검증된 채널을 찾곤</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0001.html">Aoyama salon 안내 및 공덕 셔츠룸 추천정보 탐색법</a>
+        <p class="post-item__summary">오랜만에 만난 직장 동료들과 저녁 자리를 마치고 2차 장소를 고민하는 상황은 누구나 겪는 일입니다. 특히 공덕 일대에서 마땅한 공간을 찾지 못해 헤매는 경우가 많습니다. 이러한 고민을 해결하기 위해</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0002.html">Aoyama salon 안내와 함께 보는 연남 유흥 추천정보</a>
+        <p class="post-item__summary">연남동 일대의 유흥 문화에 대해 흔히들 밤늦은 시간에만 활발하다는 오해를 하곤 합니다. 하지만 실제로 많은 업장들은 이른 저녁부터 체계적으로 운영되며 고객을 맞이합니다. Aoyama salon 안내</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0003.html">Aoyama salon 안내 및 마곡 가라오케 추천정보 구성</a>
+        <p class="post-item__summary">성공적인 모임을 위해서는 장소의 규모, 서비스의 질, 그리고 인원 수용 능력이라는 세 가지 조건이 반드시 충족되어야 합니다. 마곡 지구는 최근 비즈니스 회식 장소로 각광받으며 다양한 선택지가 등장했</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
